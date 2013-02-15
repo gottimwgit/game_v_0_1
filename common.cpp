@@ -14,6 +14,7 @@ SDL_Surface *load_image( string filename )
 		//Free the old image 
 		SDL_FreeSurface( loadedImage );
 	} else {
+		exit(-13);
 		//TODO: error handling
 	}
 

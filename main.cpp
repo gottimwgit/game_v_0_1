@@ -1,5 +1,8 @@
 /* library includes */
 #include "common.h"
+#include "Tile.h"
+#include "DrawableObject.h"
+
 
 /* prototype */
 bool init();
@@ -10,6 +13,10 @@ SDL_Surface *screen = NULL;
 int main( int argc, char** argv )
 {
 	init();
+
+	//LevelMap lvl01(2,2);
+
+	Tile tile01("bitmaps\test\tile_default_01.png");
 
 	return 0;
 }

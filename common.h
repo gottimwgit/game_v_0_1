@@ -3,9 +3,6 @@
 #pragma once
 using namespace std;
 
-/* std includes */
-using namespace std;
-
 /* library includes */
 #include "SDL.h"
 #include "SDL_image.h"
@@ -14,6 +11,7 @@ using namespace std;
 #include <string>
 #include <cstdint>
 #include <vector>
+
 
 /* global constants */
 const uint32_t SCREEN_WIDTH = 640;

@@ -75,10 +75,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common.cpp" />
+    <ClCompile Include="DrawableObject.cpp" />
+    <ClCompile Include="LevelMap.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
+    <ClInclude Include="DrawableObject.h" />
+    <ClInclude Include="LevelMap.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Tile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game_v_0_1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmaps\test\tile_default_01.png" />
+    <Image Include="bitmaps\test\tile_default_02.png" />
+    <Image Include="bitmaps\test\tile_default_03.png" />
+    <Image Include="bitmaps\test\tile_default_04.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
