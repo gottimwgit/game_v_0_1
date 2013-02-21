@@ -12,11 +12,18 @@ SDL_Surface *screen = NULL;
 
 int main( int argc, char** argv )
 {
+	printf("\nHIHI\n\n\n");
+
 	init();
 
 	//LevelMap lvl01(2,2);
 
-	Tile tile01("bitmaps\test\tile_default_01.png");
+	//Tile tile01("bitmaps\test\tile_default_01.png");
+
+//	if ( NULL == load_image( "./bitmaps/bitmap2.bmp"))
+//	if ( NULL == load_image( "./bitmaps/test2.bmp"))
+	if ( NULL == load_image( "./bitmaps/test2.png"))
+		exit(-0xff);	
 
 	return 0;
 }

@@ -52,9 +52,12 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir)\libraries\SDL_image-1.2.12\x86;$(SolutionDir)\libraries\SDL-1.2.15\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>C:\Users\dom\Documents\GitHub\game_v_0_1;C:\Users\dom\Documents\GitHub\game_v_0_1\bitmaps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -89,12 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game_v_0_1.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="bitmaps\test\tile_default_01.png" />
-    <Image Include="bitmaps\test\tile_default_02.png" />
-    <Image Include="bitmaps\test\tile_default_03.png" />
-    <Image Include="bitmaps\test\tile_default_04.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

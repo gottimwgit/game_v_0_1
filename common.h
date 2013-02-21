@@ -11,6 +11,7 @@ using namespace std;
 #include <string>
 #include <cstdint>
 #include <vector>
+#include <stdio.h>
 
 
 /* global constants */

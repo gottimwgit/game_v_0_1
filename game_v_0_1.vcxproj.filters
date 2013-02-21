@@ -16,6 +16,12 @@
     <Filter Include="dlls">
       <UniqueIdentifier>{ad3de129-c83e-45bc-824c-b739ee13d601}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\bitmaps">
+      <UniqueIdentifier>{327da2e6-0aa5-48d7-9779-9bfd52b6a42a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\bitmaps\test_bitmaps">
+      <UniqueIdentifier>{36d033f6-2503-4142-8254-cc001ebbeb7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="dlls\SDL.dll">
@@ -63,19 +69,5 @@
     <ResourceCompile Include="game_v_0_1.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="bitmaps\test\tile_default_01.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="bitmaps\test\tile_default_02.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="bitmaps\test\tile_default_03.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="bitmaps\test\tile_default_04.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>

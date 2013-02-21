@@ -14,15 +14,17 @@ SDL_Surface *load_image( string filename )
 		//Free the old image 
 		SDL_FreeSurface( loadedImage );
 	} else {
+		printf("\n\nCouldn't load %s:%s\n\n",
+		       filename.c_str(),
+		       IMG_GetError());
 		exit(-13);
-		//TODO: error handling
 	}
 
 	return optimizedImage;
 }
 
 void apply_surface( int16_t x, int16_t y,
-			  SDL_Surface *src, SDL_Surface *dest )
+                    SDL_Surface *src, SDL_Surface *dest )
 {
 	SDL_Rect offset;
 
