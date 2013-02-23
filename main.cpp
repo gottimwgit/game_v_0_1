@@ -2,6 +2,7 @@
 #include "common.h"
 #include "Tile.h"
 #include "DrawableObject.h"
+#include "LevelMap.h"
 
 
 /* prototype */
@@ -12,18 +13,18 @@ SDL_Surface *screen = NULL;
 
 int main( int argc, char** argv )
 {
-	printf("\nHIHI\n\n\n");
-
 	init();
 
-	//LevelMap lvl01(2,2);
+	LevelMap lvl01(2,2);
+	Tile t00("./bitmaps/test/tile_default_01.png");
+	Tile t01("./bitmaps/test/tile_default_02.png");
+	Tile t02("./bitmaps/test/tile_default_03.png");
+	Tile t03("./bitmaps/test/tile_default_04.png");
 
-	//Tile tile01("bitmaps\test\tile_default_01.png");
-
-//	if ( NULL == load_image( "./bitmaps/bitmap2.bmp"))
-//	if ( NULL == load_image( "./bitmaps/test2.bmp"))
-	if ( NULL == load_image( "./bitmaps/test2.png"))
-		exit(-0xff);	
+	lvl01.pushTile(&t00);
+	lvl01.pushTile(&t01);
+	lvl01.pushTile(&t02);
+	lvl01.pushTile(&t03);
 
 	return 0;
 }
