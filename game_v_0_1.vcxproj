@@ -47,13 +47,13 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)\includes\SDL_image-1.2.12\include;$(SolutionDir)\includes\SDL-1.2.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\includes\SDL_image-1.2.12\;$(SolutionDir)\includes\SDL-1.2.15\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(SolutionDir)\libraries\SDL_image-1.2.12\lib\x86;$(SolutionDir)\libraries\SDL-1.2.15\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libraries\SDL_image-1.2.12\x86;$(SolutionDir)\libraries\SDL-1.2.15\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>C:\Users\dom\Documents\GitHub\game_v_0_1;C:\Users\dom\Documents\GitHub\game_v_0_1\bitmaps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
