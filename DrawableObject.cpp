@@ -17,5 +17,5 @@ DrawableObject::~DrawableObject(void)
  */
 void DrawableObject::drawToScreen()
 {
-	 DisplayHandler::applySurface(x+64, y+32, bitmap, screen);
+	 DisplayHandler::applySurface(x, y, bitmap, screen);
 }

@@ -10,11 +10,15 @@ void LevelMap::pushTile(Tile *tile)
 		levelTiles[curX][curY] = tile;
 	
 		if ((curY % 2) == 0) { //even tiles
-			printf("drawing even: x=%d y=%d\n", curX, curY);
+			printf("pushed even tile: x=%d[%d] y=%d[%d]\n",
+			       curX,(curX * TILE_X_SZ),
+				 curY, ((curY/2) * (TILE_Y_SZ)) );
 			tile->setX(curX * TILE_X_SZ);
 			tile->setY((curY/2) * (TILE_Y_SZ));
 		} else { //odd tiles
-			printf("drawing odd: x=%d y=%d\n", curX, curY);
+			printf("pushed odd tile: x=%d[%d] y=%d[%d]\n",
+			       curX, ((curX * TILE_X_SZ) + (TILE_X_SZ/2)),
+			       curY, ((((curY-1)/2) * TILE_Y_SZ) + (TILE_Y_SZ/2)) );
 			tile->setX((curX * TILE_X_SZ) + (TILE_X_SZ/2));
 			tile->setY((((curY-1)/2) * TILE_Y_SZ) + (TILE_Y_SZ/2));
 		}
@@ -41,11 +45,18 @@ void LevelMap::pushTile(Tile *tile)
 
 void LevelMap::drawLevel()
 {
-	for (uint16_t i=0; i < totalCols; i++) {
-		for (uint16_t j=0; j < totalRows; j++) {
-			printf("draw x=%d, y=%d\n", i, j);
-			levelTiles[i][j]->drawToScreen();
+	if (isLevelFull == true) {
+		for (uint16_t i=0; i < totalCols; i++) {
+			for (uint16_t j=0; j < totalRows; j++) {
+				printf("draw x=%d, y=%d\n", i, j);
+				levelTiles[i][j]->drawToScreen();
+SDL_Flip( DisplayHandler::screen );
+
+			}
 		}
+	} else {
+		printf("Level not finished!!!\n");
+		//TODO: add error logging
 	}
 }
 
