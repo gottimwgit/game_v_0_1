@@ -6,24 +6,50 @@
  */
 void LevelMap::pushTile(Tile *tile)
 {
-	levelTiles[curX][curY] = tile;
-
-	/* now handle the overflow indexes */
-	if (curX != maxX) {
-		curX++;
-	} else {
-		/* move to next row */
-		curX = 0;
-
-		if (curY != maxY) {
-			curY++;
+	if (!isLevelFull) {
+		levelTiles[curX][curY] = tile;
+	
+		if ((curY % 2) == 0) { //even tiles
+			printf("drawing even: x=%d y=%d\n", curX, curY);
+			tile->setX(curX * TILE_X_SZ);
+			tile->setY((curY/2) * (TILE_Y_SZ));
+		} else { //odd tiles
+			printf("drawing odd: x=%d y=%d\n", curX, curY);
+			tile->setX((curX * TILE_X_SZ) + (TILE_X_SZ/2));
+			tile->setY((((curY-1)/2) * TILE_Y_SZ) + (TILE_Y_SZ/2));
+		}
+		/* now handle the overflow indexes */
+		if (curX != maxX) {
+			curX++;
 		} else {
-			curY = 0;
+			/* move to next row */
+			curX = 0;
+
+			if (curY != maxY) {
+				curY++;
+			} else {
+				printf("level filled\n");
+				curY = 0;
+				isLevelFull = true;
+			}
+		}
+	} else {
+		//TODO: handle tile overflow for LevelMap ie log error 
+		printf("level overflown with tiles\n");
+	}
+}
+
+void LevelMap::drawLevel()
+{
+	for (uint16_t i=0; i < totalCols; i++) {
+		for (uint16_t j=0; j < totalRows; j++) {
+			printf("draw x=%d, y=%d\n", i, j);
+			levelTiles[i][j]->drawToScreen();
 		}
 	}
 }
 
-LevelMap::LevelMap( uint32_t numRows, uint32_t numCols )
+LevelMap::LevelMap(uint32_t numRows, uint32_t numCols)
 {
 	totalCols = numCols;
 	totalRows = numRows;
@@ -31,18 +57,20 @@ LevelMap::LevelMap( uint32_t numRows, uint32_t numCols )
 	maxY = numRows - 1;
 	curX = 0;
 	curY = 0;
+	isLevelFull = false;
 
 	//resize the levelTiles to accomodate required rows
-	levelTiles.resize(numRows);
+	levelTiles.resize(numCols);
 	
 	/*	each row entry contains vector of columns entries
-			_________________________
-			| x | x | x | x | x | x |
-			-------------------------
-	 		 ||  ||  ||  ||  ||  ||
-	 		 ||  ||  ||  ||  ||  ||
-			 ||  ||  ||  ||  ||  ||
-			 ||  ||  ||  ||  ||  || 
+			<-------numCols-------->
+		   ^	_________________________
+		   |	| x | x | x | x | x | x |
+		   |	-------------------------
+	    numRows	 ||  ||  ||  ||  ||  ||
+	 	   |	 ||  ||  ||  ||  ||  ||
+		   |	 ||  ||  ||  ||  ||  ||
+		   v	 ||  ||  ||  ||  ||  || 
 	*/
 
 	for (uint32_t i = 0; i < numCols; i++) {
@@ -51,7 +79,7 @@ LevelMap::LevelMap( uint32_t numRows, uint32_t numCols )
 
 }
 
-LevelMap::~LevelMap( void )
+LevelMap::~LevelMap()
 {
 	//TODO: implement destructor
 }

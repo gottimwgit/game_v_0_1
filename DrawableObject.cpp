@@ -1,9 +1,9 @@
-#include "drawableObject.h"
-#include "common.h"
+#include "DrawableObject.h"
+#include "DisplayHandler.h"
 
-DrawableObject::DrawableObject( string img_location ) 
+DrawableObject::DrawableObject(string img_location) 
 {
-	this->bitmap = load_image(img_location);
+	this->bitmap = DisplayHandler::loadImage(img_location);
 }
 
 DrawableObject::~DrawableObject(void)
@@ -11,10 +11,11 @@ DrawableObject::~DrawableObject(void)
 
 }
 
-bool DrawableObject::drawObject()
+/**
+ * @brief blits instance to screen
+ *
+ */
+void DrawableObject::drawToScreen()
 {
-	return false;
+	 DisplayHandler::applySurface(x+64, y+32, bitmap, screen);
 }
-
-
-

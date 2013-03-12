@@ -1,22 +1,23 @@
 #ifndef __DRAWABLE_OBJECT_H__
 #define __DRAWABLE_OBJECT_H__
 
-#include "common.h"
+#include "common_includes.h"
+#include "DisplayHandler.h"
 
-class DrawableObject {
-private:
-	uint32_t x;  // x coordinate from left
-	uint32_t y;  // y coordiante from top!
-	uint32_t z;
-	uint32_t objectID;
+class DrawableObject : public DisplayHandler 
+{
+protected:
+	uint16_t x;  // x coordinate from left
+	uint16_t y;  // y coordiante from top!
+	uint16_t z;  // z index
+	uint16_t objectID;
 	SDL_Surface *bitmap;
 
 public:
-	bool drawObject();
+	virtual void drawToScreen();
 
-	DrawableObject( string img_location );
+	DrawableObject(string img_location);
 	~DrawableObject(void);
 };
 
 #endif /* __DRAWABLE_OBJECT_H__ */
-

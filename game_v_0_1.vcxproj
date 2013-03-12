@@ -48,6 +48,7 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(SolutionDir)\includes\SDL_image-1.2.12\;$(SolutionDir)\includes\SDL-1.2.15\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -58,6 +59,9 @@
     <ResourceCompile>
       <AdditionalIncludeDirectories>C:\Users\dom\Documents\GitHub\game_v_0_1;C:\Users\dom\Documents\GitHub\game_v_0_1\bitmaps;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -73,18 +77,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="dlls\SDL.dll" />
     <None Include="dlls\SDL_image.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="common.cpp" />
+    <ClCompile Include="DisplayHandler.cpp" />
     <ClCompile Include="DrawableObject.cpp" />
     <ClCompile Include="LevelMap.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
+    <ClInclude Include="common_includes.h" />
+    <ClInclude Include="DisplayHandler.h" />
     <ClInclude Include="DrawableObject.h" />
     <ClInclude Include="LevelMap.h" />
     <ClInclude Include="resource.h" />
